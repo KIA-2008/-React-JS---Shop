@@ -1,13 +1,65 @@
+import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Items from "./components/Items";
 
-function App() {
-  return (
-    <div className="wrapper">
-      <Header />
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [
+        {
+          id: 1,
+          title: "Кресло",
+          img: "Кресло.jpg",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          category: "armchair",
+          price: "199.99",
+        },
+        {
+          id: 2,
+          title: "Стол",
+          img: "Стол.jpg",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          category: "table",
+          price: "299.99",
+        },
+        {
+          id: 3,
+          title: "Диван",
+          img: "Диван.jpg",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          category: "sofa",
+          price: "549.99",
+        },
+        {
+          id: 4,
+          title: "Лампа",
+          img: "Лампа.jpg",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          category: "light",
+          price: "25.00",
+        },
+        {
+          id: 5,
+          title: "Кровать",
+          img: "Кровать.jpg",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing.",
+          category: "bed",
+          price: "799.99",
+        },
+      ],
+    };
+  }
+  render() {
+    return (
+      <div className="wrapper">
+        <Header />
+        <Items items={this.state.items} />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
